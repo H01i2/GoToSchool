@@ -22,6 +22,7 @@ public class Role {
         this.mood = mood;
     }
 
+
     public String getName() {
         return name;
     }
