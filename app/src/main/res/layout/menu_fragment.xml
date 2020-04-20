@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout_menu"
+    android:background="#FFFFFF">
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="保存游戏"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_style"
+        android:layout_marginTop="100dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_aboutus"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="关于我们"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_style"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_menuquit"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="回到主界面"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_style"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+</LinearLayout>
+

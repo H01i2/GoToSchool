@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--底部-->
+<com.example.project1.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#FFFFFF"
+    android:orientation="horizontal"
+    android:layout_above="@+id/v_bottom"
+    android:gravity="center">
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_study"
+        android:text="学  习"
+        android:textSize="20dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/button_style"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="#f9f9f9"
+        android:textStyle="bold"
+        />
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_life"
+        android:text="生  活"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/button_style"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="#f9f9f9"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/btn_study"/>
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_rltv"
+        android:text="关  系"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/button_style"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="#f9f9f9"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/btn_life"/>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_next"
+        android:text="下个月"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/button_style_next"
+        android:textColor="#f9f9f9"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/btn_rltv"/>
+
+
+</com.example.project1.PercentRelativeLayout>

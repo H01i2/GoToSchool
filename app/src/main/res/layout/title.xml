@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--顶部-->
+<com.example.project1.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/iv_head"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/head"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_name"
+        android:text="名字"
+        android:layout_toRightOf="@id/iv_head"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000040"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_age"
+        android:text="年龄"
+        android:layout_toRightOf="@+id/iv_head"
+        android:layout_below="@id/tv_name"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000045"/>
+
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/menu1"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_money"
+        android:layout_toLeftOf="@id/btn_menu"
+        android:textSize="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="30dp"
+        android:text="余额"
+        android:textColor="#6C955A"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/iv_head"
+        android:background="#7a7374"
+        android:layout_marginTop="10dp"/>
+
+           
+</com.example.project1.PercentRelativeLayout>
