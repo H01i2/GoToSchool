@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.example.project1.Fragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.project1.R;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;

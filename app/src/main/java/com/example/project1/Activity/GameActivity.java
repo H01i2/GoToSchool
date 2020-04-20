@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.example.project1.Activity;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -15,6 +15,13 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.project1.Fragment.InfoFragment;
+import com.example.project1.Fragment.LifeFragment;
+import com.example.project1.Fragment.MenuFragment;
+import com.example.project1.R;
+import com.example.project1.Fragment.RltvFragment;
+import com.example.project1.Fragment.StudyFragment;
 
 
 public class GameActivity extends FragmentActivity implements OnClickListener {

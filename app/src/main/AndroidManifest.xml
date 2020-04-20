@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstActivity">
+        <activity android:name=".Activity.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RltvFragment" />
-        <activity android:name=".GameActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Fragment.RltvFragment" />
+        <activity android:name=".Activity.GameActivity" />
+        <activity android:name=".Activity.MainActivity">
         </activity>
     </application>
 

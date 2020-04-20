@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.example.project1.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +9,12 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.example.project1.R;
+
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class CanteenFragment extends Fragment {
