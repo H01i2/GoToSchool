@@ -1,15 +1,15 @@
 package com.example.project1.Role;
 
 public class Role {
-    private String name;
-    private int year;
-    private int money;
-    private int HP;
-    private int health;
-    private int EQ;
-    private int IQ;
-    private int mood;
-    private int month;
+    private String name; //角色姓名
+    private int year;    //角色年龄
+    private int money;   //零花钱
+    private int HP;      //精力
+    private int health;  //健康值
+    private int EQ;      //情商
+    private int IQ;      //智商
+    private int mood;    //心情
+    private int month;   //月份
 
     public Role(String name, int year, int money, int HP, int health, int EQ, int IQ, int mood) {
         this.name = name;
