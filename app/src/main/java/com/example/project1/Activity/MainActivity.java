@@ -10,6 +10,12 @@ import android.view.View;
 
 import com.example.project1.R;
 
+
+
+    /*主界面类*/
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void quit(View view) {
+    public void quit(View view) {   //主界面退出游戏
         AlertDialog.Builder check = new AlertDialog.Builder(this);
         check.setMessage("求你了不要走！！");
         check.setPositiveButton("就要走", y_click);

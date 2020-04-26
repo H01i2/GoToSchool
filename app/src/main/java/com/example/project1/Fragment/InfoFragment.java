@@ -12,6 +12,12 @@ import com.example.project1.Role.Role;
 
 import androidx.fragment.app.Fragment;
 
+
+
+    /*点击头像->信息界面*/
+
+
+
 public class InfoFragment extends Fragment {
     private Role role;
 
@@ -32,9 +38,7 @@ public class InfoFragment extends Fragment {
     }
 
     @Override
-    /**
-     * 加载布局文件然后直接返回，显示在Activity
-     */
+    /*加载布局文件然后直接返回，显示在Activity*/
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         View v=inflater.inflate(R.layout.info_fragment,container,false);
         tv_Value_Energy = v.findViewById(R.id.tv_value_energy);

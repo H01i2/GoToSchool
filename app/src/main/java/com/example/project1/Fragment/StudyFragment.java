@@ -18,9 +18,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
+    /*学习界面*/
+
+
+
 public class StudyFragment extends Fragment {
-    private String[] st_Study = new String[]{"努力学习","课后复习","图书馆","食堂","操场","逃课"};
-    private int[] im_Study = new int[]{R.drawable.study_hard,R.drawable.review,R.drawable.library,
+    private String[] st_Study = new String[]{"努力学习","课后复习","图书馆","食堂","操场","逃课"};//动作
+    private int[] im_Study = new int[]{R.drawable.study_hard,R.drawable.review,R.drawable.library,//图标
                 R.drawable.canteen,R.drawable.playground,R.drawable.skip_class};
     private ArrayList<Map<String, Object>> data_Study = new ArrayList<Map<String, Object>>();
     private ListView lv_Study;
@@ -42,13 +48,13 @@ public class StudyFragment extends Fragment {
         lv_Study.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(id==0){
+                if(id==0){          //点击努力学习时
                     Toast.makeText(getActivity(), "黎海亮加油", Toast.LENGTH_LONG).show();
                 }else if(id==1) {
                     Toast.makeText(getActivity(), "廖宇轩加油", Toast.LENGTH_LONG).show();
-                }else if(id==2){
+                }else if(id==2) {
                     Toast.makeText(getActivity(), "你是煞笔", Toast.LENGTH_LONG).show();
-                }else if(id==3){
+                }else if(id==3) {   //点击食堂时进入CanteenFragment
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new CanteenFragment()).commit();
                 }
