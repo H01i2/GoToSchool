@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.project1.Activity.GameActivity;
 import com.example.project1.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,8 +19,15 @@ public class MainActivity extends AppCompatActivity {
     }
     public void start(View view){
         Intent intent=new Intent(this, GameActivity.class);
+        intent.putExtra("key","start");
         startActivity(intent);
     }
+    public void continue_game (View view){
+        Intent intent=new Intent(this, GameActivity.class);
+        intent.putExtra("key","continue");
+        startActivity(intent);
+    }
+
 
     public void quit(View view) {
         AlertDialog.Builder check = new AlertDialog.Builder(this);

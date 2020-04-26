@@ -10,8 +10,16 @@ public class Role {
     private int IQ;      //智商
     private int mood;    //心情
     private int month;   //月份
+    private String school;  //学校
+    private String[] nianji={"一年级","二年级","三年级","四年级","五年级","六年级"};
+    private int nj;       //年级下标
 
-    public Role(String name, int year, int money, int HP, int health, int EQ, int IQ, int mood) {
+
+
+    public Role() {
+    }
+
+    public Role(String name, int year, int money, int HP, int health, int EQ, int IQ, int mood, int month, String school,int nj) {
         this.name = name;
         this.year = year;
         this.money = money;
@@ -20,7 +28,11 @@ public class Role {
         this.EQ = EQ;
         this.IQ = IQ;
         this.mood = mood;
+        this.month = month;
+        this.school = school;
+        this.nj = nj;
     }
+
 
 
     public String getName() {
@@ -93,5 +105,25 @@ public class Role {
 
     public void setMonth(int month) {
         this.month = month;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public String[] getNianji() {
+        return nianji;
+    }
+
+    public int getNj() {
+        return nj;
+    }
+
+    public void setNj(int nj) {
+        this.nj = nj;
     }
 }

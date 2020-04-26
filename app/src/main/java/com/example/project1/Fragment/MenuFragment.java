@@ -6,16 +6,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+
 
 import com.example.project1.R;
+import com.example.project1.Role.Role;
+import com.example.project1.SharedHelper;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+
+
 public class MenuFragment extends Fragment implements View.OnClickListener {
     private Button btn_Menuquit;
     private Button btn_Aboutus;
+    private Button btn_Save;
+
+    private Role role;
+
+    public MenuFragment(Role role) {
+        this.role = role;
+    }
 
     @Override
     /**
@@ -26,8 +37,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
 
          btn_Menuquit = (Button) view.findViewById(R.id.btn_menuquit);
          btn_Aboutus = (Button) view.findViewById(R.id.btn_aboutus);
+         btn_Save=(Button) view.findViewById(R.id.btn_save);
          btn_Menuquit.setOnClickListener(this);
          btn_Aboutus.setOnClickListener(this);
+         btn_Save.setOnClickListener(this);
          return view;
     }
     public void onClick(View v) {
@@ -64,6 +77,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
 
                 AlertDialog aboutus_1=aboutus.create();
                 aboutus_1.show();
+                break;
+            case R.id.btn_save:
+                SharedHelper s=new SharedHelper(getActivity().getApplicationContext());
+                s.save(role);
                 break;
         }
 

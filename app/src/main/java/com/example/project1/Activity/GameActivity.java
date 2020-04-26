@@ -1,10 +1,13 @@
 package com.example.project1.Activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.Fragment;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -22,6 +25,11 @@ import com.example.project1.Fragment.MenuFragment;
 import com.example.project1.R;
 import com.example.project1.Fragment.RltvFragment;
 import com.example.project1.Fragment.StudyFragment;
+import com.example.project1.Role.Role;
+import com.example.project1.SharedHelper;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class GameActivity extends FragmentActivity implements OnClickListener {
@@ -35,6 +43,10 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
     private ProgressBar pb_EQ;
     private ProgressBar pb_Mood;
 
+    private TextView tv_name;
+    private TextView tv_age;
+    private TextView tv_money;
+    private TextView tv_time;
     private TextView tv_Value_Energy;
     private TextView tv_Value_Health;
     private TextView tv_Value_IQ;
@@ -50,6 +62,10 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
     private Fragment study, life, rltv, info, menu;
     private FragmentManager manager;
     private FragmentTransaction transaction;
+
+    private Role role=null;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +90,11 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         pb_EQ = findViewById(R.id.pb_eQ);
         pb_Mood = findViewById(R.id.pb_mood);
 
+        tv_name=findViewById(R.id.tv_name);
+        tv_age=findViewById(R.id.tv_age);
+        tv_money=findViewById(R.id.tv_money);
+        tv_time=findViewById(R.id.tv_time);
+
         tv_Value_Energy = findViewById(R.id.tv_value_energy);
         tv_Value_Health = findViewById(R.id.tv_value_health);
         tv_Value_IQ = findViewById(R.id.tv_value_iQ);
@@ -84,12 +105,15 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         btn_Study = findViewById(R.id.btn_study);
         btn_Life = findViewById(R.id.btn_life);
         btn_Rltv = findViewById(R.id.btn_rltv);
+        btn_Next = findViewById(R.id.btn_next);
 
         btn_Life.setOnClickListener(this);
         btn_Study.setOnClickListener(this);
         btn_Rltv.setOnClickListener(this);
         iv_head.setOnClickListener(this);
         btn_Menu.setOnClickListener(this);
+        btn_Next.setOnClickListener(this);
+
 
         /**
          * 启动默认选中第一个Fragment
@@ -99,10 +123,44 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
                 R.anim.slide_right_in, R.anim.slide_right_out).replace(R.id.fra_content, study);
         transaction.commit();
-
-
+        initial();
     }
 
+    /*
+     *初始化数据
+     */
+    public void initial(){
+        Intent it=getIntent();
+        String key=it.getStringExtra("key");
+        role=new Role();
+        if(key!=null) {
+            switch (key) {
+                case "start":   //新的游戏
+                    role = new Role("随便", 6, 1000, 100, 100, (int) (Math.random() *(30-1)+1),
+                            (int) (Math.random()*(30-1)+1), 50, 9, "小学",0);
+                    break;
+                case "continue":    //继续游戏
+                    Map<String, String> data;
+                    data=new SharedHelper(getApplicationContext()).read();
+                    role.setName(data.get("name"));
+                    role.setYear(Integer.parseInt(data.get("year")));
+                    role.setMoney(Integer.parseInt(data.get("money")));
+                    role.setHP(Integer.parseInt(data.get("HP")));
+                    role.setHealth(Integer.parseInt(data.get("health")));
+                    role.setEQ(Integer.parseInt(data.get("EQ")));
+                    role.setIQ(Integer.parseInt(data.get("IQ")));
+                    role.setMood(Integer.parseInt(data.get("mood")));
+                    role.setMonth(Integer.parseInt(data.get("month")));
+                    role.setSchool(data.get("school").toString());
+                    role.setNj(Integer.parseInt(data.get("nj")));
+                    break;
+            }
+        }
+        tv_name.setText(role.getName());
+        tv_age.setText(Integer.toString(role.getYear()));
+        tv_money.setText(Integer.toString(role.getMoney()));
+        tv_time.setText(role.getMonth()+"月 "+role.getSchool()+role.getNianji()[role.getNj()]);
+    }
 
     /*
      * 去除所有的Fragment
@@ -157,7 +215,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
 
             case R.id.iv_head:
                 hideFragment(transaction);
-                info = new InfoFragment();
+                info = new InfoFragment(role);
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
                         R.anim.slide_right_in, R.anim.slide_right_out).replace(R.id.fra_content, info);
                 transaction.commit();
@@ -165,17 +223,75 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
 
             case R.id.btn_menu:
                 hideFragment(transaction);
-                menu = new MenuFragment();
+                menu = new MenuFragment(role);
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
                         R.anim.slide_right_in, R.anim.slide_right_out).replace(R.id.fra_content, menu);
                 transaction.commit();
                 break;
-
-
+            case R.id.btn_next:
+                next_month();
+                break;
             default:
                 break;
         }
     }
+
+    public void next_month(){
+        role.setMonth(role.getMonth()+1);
+        int month=role.getMonth();
+        int year=role.getYear();
+        if(month>12){
+            role.setMonth(1);
+            month++;
+            role.setYear(year+1);
+            year++;
+        }
+        if (month==9){
+            String text=null;
+            switch (year){
+                case 12:
+                    text="你上初中了";
+                    role.setSchool("初中");
+                    role.setNj(0);
+                    break;
+                case 15:
+                    text="你上高中了";
+                    role.setSchool("高中");
+                    role.setNj(0);
+                    break;
+                case 18:
+                    text="你上大学了";
+                    role.setSchool("大学");
+                    role.setNj(0);
+                    break;
+                case 22:
+                    text="你的学生时代已经结束，面对着新的生活你感到了迷茫";
+                    AlertDialog.Builder quit= new AlertDialog.Builder(this);
+                    quit.setMessage("游戏结束！");
+                    quit.setPositiveButton("返回主菜单", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            android.os.Process.killProcess(android.os.Process.myPid());
+                        }
+                    });
+                    AlertDialog quit_1=quit.create();
+                    quit_1.show();
+                    break;
+                default:
+                    text=null;
+                    role.setNj(role.getNj()+1);
+                    break;
+            }
+            if(text!=null)
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+        }
+        if(month==1||month==2||month==7||month==8){
+            Toast.makeText(this, "假期", Toast.LENGTH_SHORT).show();
+        }
+        tv_age.setText(role.getYear()+"");
+        tv_time.setText(role.getMonth()+"月 "+role.getSchool()+role.getNianji()[role.getNj()]);
+    }
+
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
