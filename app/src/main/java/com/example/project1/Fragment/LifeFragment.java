@@ -17,16 +17,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
+    /*生活界面*/
+
+
+
 public class LifeFragment extends Fragment {
-    private String[] st_Life = new String[]{"回家","兼职","超市","医院","锻炼","酒吧","网吧"};
-    private int[] im_Life = new int[]{R.drawable.home,R.drawable.part_time,R.drawable.market,
+    private String[] st_Life = new String[]{"回家","兼职","超市","医院","锻炼","酒吧","网吧"};//地点
+    private int[] im_Life = new int[]{R.drawable.home,R.drawable.part_time,R.drawable.market,//图标
             R.drawable.hospital,R.drawable.exercise,R.drawable.club,R.drawable.net_bar};
     private ArrayList<Map<String, Object>> data_Life = new ArrayList<Map<String, Object>>();
     private ListView lv_Life;
     @Override
-    /**
-     * 加载布局文件然后直接返回，显示在Activity
-     */
+    /*加载布局文件然后直接返回，显示在Activity*/
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         View view =  inflater.inflate(R.layout.life_fragment,container,false);
         lv_Life =(ListView) view.findViewById(R.id.lv_life);
@@ -41,12 +45,12 @@ public class LifeFragment extends Fragment {
         lv_Life.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(id==0){
+                if(id==0){         //点击回家时进入HomeFragment
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new HomeFragment()).commit();
-                }else if(id==1) {
+                }else if(id==1) {  //点击兼职时
                     Toast.makeText(getActivity(), "廖宇轩加油", Toast.LENGTH_LONG).show();
-                }else if(id==2){
+                }else if(id==2) {  //点击超市时
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new MarketFragment()).commit();
                 }

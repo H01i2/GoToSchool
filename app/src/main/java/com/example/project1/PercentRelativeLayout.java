@@ -7,6 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+
+
+    /*屏幕适配用，不用理*/
+
+
+
 public class PercentRelativeLayout extends RelativeLayout {
 
     public PercentRelativeLayout(Context context) {

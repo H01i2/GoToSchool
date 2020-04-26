@@ -17,16 +17,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
+    /*学习->食堂界面*/
+
+
+
 public class CanteenFragment extends Fragment {
-    private String[] st_Canteen = new String[]{"吃个馒头","吃顿快餐","吃顿海鲜","返回"};
-    private int[] im_Canteen = new int[]{R.drawable.bun,R.drawable.fastfood,R.drawable.seafood,
+    private String[] st_Canteen = new String[]{"吃个馒头","吃顿快餐","吃顿海鲜","返回"};//食物
+    private int[] im_Canteen = new int[]{R.drawable.bun,R.drawable.fastfood,R.drawable.seafood,//图标
             R.drawable.back};
     private ArrayList<Map<String, Object>> data_Canteen = new ArrayList<Map<String, Object>>();
     private ListView lv_Canteen;
     @Override
-    /**
-     * 加载布局文件然后直接返回，显示在Activity
-     */
+    /*加载布局文件然后直接返回，显示在Activity*/
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         View view=inflater.inflate(R.layout.canteen_fragment,container,false);
         lv_Canteen = (ListView) view.findViewById(R.id.lv_canteen);
@@ -41,13 +45,13 @@ public class CanteenFragment extends Fragment {
         lv_Canteen.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(id==0){
+                if(id==0){         //点击馒头时
                     Toast.makeText(getActivity(), "黎海亮加油", Toast.LENGTH_LONG).show();
-                }else if(id==1) {
+                }else if(id==1) {  //点击快餐时
                     Toast.makeText(getActivity(), "廖宇轩加油", Toast.LENGTH_LONG).show();
-                }else if(id==2){
+                }else if(id==2) {  //点击海鲜时
                     Toast.makeText(getActivity(), "你是煞笔", Toast.LENGTH_LONG).show();
-                }else if(id==3){
+                }else if(id==3) {  //点击返回时
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new StudyFragment()).commit();
                 }

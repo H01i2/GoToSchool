@@ -17,16 +17,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
+    /*生活->回家界面*/
+
 public class HomeFragment extends Fragment {
-    private String[] st_Home = new String[]{"吃饭","睡觉","看电视","和父母聊天","返回"};
-    private int[] im_Home = new int[]{R.drawable.eat,R.drawable.bed,R.drawable.tv,R.drawable.chat,
+    private String[] st_Home = new String[]{"吃饭","睡觉","看电视","和父母聊天","返回"};//活动
+    private int[] im_Home = new int[]{R.drawable.eat,R.drawable.bed,R.drawable.tv,R.drawable.chat,//图标
             R.drawable.back};
     private ArrayList<Map<String, Object>> data_Home = new ArrayList<Map<String, Object>>();
     private ListView lv_Home;
     @Override
-    /**
-     * 加载布局文件然后直接返回，显示在Activity
-     */
+    /*加载布局文件然后直接返回，显示在Activity*/
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         View view=inflater.inflate(R.layout.home_fragment,container,false);
         lv_Home = (ListView) view.findViewById(R.id.lv_home);
@@ -41,13 +43,13 @@ public class HomeFragment extends Fragment {
         lv_Home.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(id==0){
+                if(id==0){          //点击吃饭时
                     Toast.makeText(getActivity(), "黎海亮加油", Toast.LENGTH_LONG).show();
-                }else if(id==1) {
+                }else if(id==1) {   //点击睡觉时
                     Toast.makeText(getActivity(), "廖宇轩加油", Toast.LENGTH_LONG).show();
-                }else if(id==2){
+                }else if(id==2) {   //点击看电视时
                     Toast.makeText(getActivity(), "你是煞笔", Toast.LENGTH_LONG).show();
-                }else if(id==4){
+                }else if(id==4) {   //点击返回时
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new LifeFragment()).commit();
                 }

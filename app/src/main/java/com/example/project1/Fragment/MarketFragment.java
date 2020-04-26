@@ -16,15 +16,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
+    /*生活->超市界面*/
+
+
+
 public class MarketFragment extends Fragment {
-    private String[] st_Market = new String[]{"食品","花卉","配饰","返回"};
-    private int[] im_Market = new int[]{R.drawable.snack,R.drawable.flower,R.drawable.acc, R.drawable.back};
+    private String[] st_Market = new String[]{"食品","花卉","配饰","返回"};//物品
+    private int[] im_Market = new int[]{R.drawable.snack,R.drawable.flower,R.drawable.acc, R.drawable.back};//图标
     private ArrayList<Map<String, Object>> data_Market = new ArrayList<Map<String, Object>>();
     private ListView lv_Market;
     @Override
-    /**
-     * 加载布局文件然后直接返回，显示在Activity
-     */
+    /*加载布局文件然后直接返回，显示在Activity*/
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         View view=inflater.inflate(R.layout.market_fragment,container,false);
         lv_Market = (ListView) view.findViewById(R.id.lv_market);
@@ -45,10 +49,10 @@ public class MarketFragment extends Fragment {
                 }else if(id==1) {
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new FlowerFragment()).commit();
-                }else if(id==2){
+                }else if(id==2) {
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new AccFragment()).commit();
-                }else if(id==3){
+                }else if(id==3) {    //点击返回时
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new LifeFragment()).commit();
                 }

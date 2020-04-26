@@ -24,29 +24,34 @@ import com.example.project1.Fragment.RltvFragment;
 import com.example.project1.Fragment.StudyFragment;
 
 
+
+    /*游戏界面*/
+
+
+
 public class GameActivity extends FragmentActivity implements OnClickListener {
     private long mExitTime;
-
+    /*左上角头像*/
     private ImageView iv_head;
-
-    private ProgressBar pb_Energy;
-    private ProgressBar pb_Health;
-    private ProgressBar pb_IQ;
-    private ProgressBar pb_EQ;
-    private ProgressBar pb_Mood;
-
+    /*条条*/
+    private ProgressBar pb_Energy;//精力
+    private ProgressBar pb_Health;//健康
+    private ProgressBar pb_IQ;    //智商
+    private ProgressBar pb_EQ;    //情商
+    private ProgressBar pb_Mood;  //心情
+    /*具体数值*/
     private TextView tv_Value_Energy;
     private TextView tv_Value_Health;
     private TextView tv_Value_IQ;
     private TextView tv_Value_EQ;
     private TextView tv_Value_Mood;
-
-    private Button btn_Study;
-    private Button btn_Life;
-    private Button btn_Rltv;
-    private Button btn_Next;
-    private Button btn_Menu;
-
+    /*按钮*/
+    private Button btn_Study;     //学习
+    private Button btn_Life;      //生活
+    private Button btn_Rltv;      //关系
+    private Button btn_Next;      //下个月
+    private Button btn_Menu;      //右上角菜单
+    /*Fragment里的东西不用管*/
     private Fragment study, life, rltv, info, menu;
     private FragmentManager manager;
     private FragmentTransaction transaction;
@@ -91,10 +96,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         iv_head.setOnClickListener(this);
         btn_Menu.setOnClickListener(this);
 
-        /**
-         * 启动默认选中第一个Fragment
-         */
-
+        /*启动默认选中第一个Fragment*/
         study = new StudyFragment();
         transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
                 R.anim.slide_right_in, R.anim.slide_right_out).replace(R.id.fra_content, study);
@@ -104,9 +106,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
     }
 
 
-    /*
-     * 去除所有的Fragment
-     * */
+    /*去除所有的Fragment*/
     public void hideFragment(FragmentTransaction transaction) {
         if (study != null) {
             transaction.remove(study);
@@ -131,6 +131,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         transaction = manager.beginTransaction();
 
         switch (v.getId()) {
+            /*游戏界面每个按钮的作用*/
             case R.id.btn_study:
                 hideFragment(transaction);
                 study = new StudyFragment();
@@ -176,7 +177,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
         }
     }
-
+    /*双击两次返回切回桌面的代码（改成退出会出错，原因不明）*/
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {

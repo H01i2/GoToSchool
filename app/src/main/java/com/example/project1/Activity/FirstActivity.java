@@ -11,6 +11,12 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.project1.R;
 
+
+
+    /*第一屏*/
+
+
+
 public class FirstActivity extends AppCompatActivity {
     private ImageView iv_Gif;
     @Override
