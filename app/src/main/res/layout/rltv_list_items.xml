@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_below="@+id/title"
-    android:layout_above="@+id/bottom"
-    android:orientation="horizontal">
+    android:layout_above="@+id/bottom">
 
     <ImageView
         android:id="@+id/iv_rltv_list"
@@ -13,17 +12,38 @@
         android:layout_marginRight="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"/>
+        android:layout_marginBottom="20dp" />
+
     <TextView
         android:id="@+id/tv_rltv_list"
+        android:text="sadugadiaudbwajdba"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
+        android:textColor="#2F4F4F"
+        android:layout_toRightOf="@+id/iv_rltv_list"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
-        android:textColor="#2F4F4F"/>
+        android:layout_marginRight="30dp"/>
 
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/pb_rltv_list"
+        android:layout_width="250dp"
+        android:layout_height="15dp"
+        android:layout_below="@id/tv_rltv_list"
+        android:layout_toRightOf="@+id/iv_rltv_list"
+        android:layout_marginTop="5dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progressDrawable="@drawable/progressbar_style"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_rltv_list"
+        android:layout_toRightOf="@id/pb_rltv_list"
+        android:layout_marginTop="1dp"
+        android:textSize="15dp"
+        android:text="0"
+        android:layout_marginLeft="14dp" />
+
+</RelativeLayout>
 
