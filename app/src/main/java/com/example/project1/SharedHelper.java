@@ -40,7 +40,7 @@ public class SharedHelper {
         editor.putString("school",role.getSchool());
         editor.putInt("nj",role.getNj());
         editor.commit();
-        Toast.makeText(mContext, "保存成功", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mContext, "保存成功", Toast.LENGTH_SHORT).show();
     }
 
     //定义一个读取SP文件的方法

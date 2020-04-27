@@ -290,6 +290,8 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         }
         tv_age.setText(role.getYear()+"");
         tv_time.setText(role.getMonth()+"月 "+role.getSchool()+role.getNianji()[role.getNj()]);
+        SharedHelper s=new SharedHelper(getApplicationContext());           //实时保存
+        s.save(role);
     }
 
 
