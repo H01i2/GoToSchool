@@ -9,7 +9,7 @@
         android:layout_height="80dp"
         android:id="@+id/iv_head"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="10dp"
         android:src="@drawable/head"/>
     <TextView
         android:layout_width="wrap_content"
@@ -21,17 +21,29 @@
         android:textSize="20dp"
         android:layout_marginLeft="10dp"
         android:textColor="#000040"/>
+
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/iv_head"
+        android:text="年龄"
+        android:textColor="#000045"
+        android:textSize="15dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_age"
-        android:text="年龄"
-        android:layout_toRightOf="@+id/iv_head"
         android:layout_below="@id/tv_name"
-        android:textSize="15dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="#000045"/>
+        android:layout_toRightOf="@+id/tv_age"
+        android:text="岁"
+        android:textColor="#000045"
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/btn_menu"
