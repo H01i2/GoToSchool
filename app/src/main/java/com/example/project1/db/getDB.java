@@ -67,10 +67,7 @@ public class getDB {
         String name = nm2.getName();
 
         String nameName = familyName+name;
-
         return nameName;
-
-
     }
 
 

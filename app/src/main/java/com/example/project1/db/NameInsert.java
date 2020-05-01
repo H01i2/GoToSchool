@@ -17,5 +17,25 @@ public class NameInsert {
         name3.setName("宇轩");
         name3.save();
 
+        Name name4 = new Name();
+        name4.setFamilyName("吕");
+        name4.setName("振华");
+        name4.save();
+
+        Name name5 = new Name();
+        name5.setFamilyName("梁");
+        name5.setName("勇镜");
+        name5.save();
+
+        Name name6 = new Name();
+        name6.setFamilyName("颜");
+        name6.setName("犬明");
+        name6.save();
+
+        Name name7 = new Name();
+        name7.setFamilyName("李");
+        name7.setName("述堂");
+        name7.save();
+
     }
 }
