@@ -6,5 +6,8 @@ public class dbInsert {
         //数据插入
         EventsInsert events = new EventsInsert();
         events.eventInsert();
+
+        NameInsert n = new NameInsert();
+        n.NameInsert();
     }
 }

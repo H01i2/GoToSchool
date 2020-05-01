@@ -27,6 +27,7 @@ import com.example.project1.Fragment.RltvFragment;
 import com.example.project1.Fragment.StudyFragment;
 import com.example.project1.Role.Role;
 import com.example.project1.SharedHelper;
+import com.example.project1.db.getDB;
 
 import java.util.Map;
 
@@ -136,12 +137,13 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
      */
     public void initial(){
         Intent it=getIntent();
+        getDB db = new getDB();
         String key=it.getStringExtra("key");
         role=new Role();
         if(key!=null) {
             switch (key) {
                 case "start":   //新的游戏
-                    role = new Role("随便", 6, 0, 100, 100, (int) (Math.random() *(30-1)+1),
+                    role = new Role(db.getName(), 6, 0, 100, 100, (int) (Math.random() *(30-1)+1),
                             (int) (Math.random()*(30-1)+1), 50, 9, "小学",0);
                     break;
                 case "continue":    //继续游戏
@@ -240,8 +242,6 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
         }
     }
-
-
 
 
     public void next_month(){

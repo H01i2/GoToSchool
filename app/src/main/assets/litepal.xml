@@ -4,5 +4,6 @@
     <version value="1"></version>
     <list>
         <mapping class="com.example.project1.db.Events"></mapping>
+        <mapping class="com.example.project1.db.Name"></mapping>
     </list>
 </litepal>

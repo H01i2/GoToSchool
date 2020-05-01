@@ -12,7 +12,7 @@ public class getDB {
     private String Event;               //存事件名
     private String OptionText;          //存选项名
     private int[] OptionInt;            //存选项值
-    private Events events;
+    private Events events;              //事件存储
     private String name ;               //用于事件判断
     private String getOption1;
     private String getOption2;
@@ -46,16 +46,33 @@ public class getDB {
 
     public void getDB() {
         List<Events> ev = LitePal.where("action=?", name).find(Events.class);  //查找合适的数据存放到列表ev
-        Random random = new Random();                                                //随机
-        int num = random.nextInt(ev.size());                                         //num存储随机的数字
-        events = ev.get(num);                                                 //从列表中查找随机选出的事件存到events
-        Event = events.getEvents();                                                  //将事件存到Event
+        Random random = new Random();                                                      //随机对象创建
+        int num = random.nextInt(ev.size());                                               //num存储随机的数字
+        events = ev.get(num);                                                              //从列表中查找随机选出的事件存到events
+        Event = events.getEvents();                                                        //将事件存到Event
         EventsNum();
 
-//        getOption1 = events.getOption1();
-//        split(getOption1);
+    }
+
+    public String getName(){
+        List<Name> n = LitePal.findAll(Name.class);
+        Random random = new Random();
+        int num = random.nextInt(n.size());
+        Name nm = n.get(num);
+        String familyName = nm.getFamilyName();
+
+        Random random2 = new Random();
+        int num2 = random2.nextInt(n.size());
+        Name nm2 = n.get(num2);
+        String name = nm2.getName();
+
+        String nameName = familyName+name;
+
+        return nameName;
+
 
     }
+
 
     //设置修改过的值到对象
     public void setNUM(Role role, int optionCode) {
@@ -101,6 +118,7 @@ public class getDB {
         OptionI.add(OptionInt);
     }
 
+    //设置返回值判断弹出选项个数
     public int EventsNum(){
         getOption1 = events.getOption1();
         getOption2 = events.getOption2();
