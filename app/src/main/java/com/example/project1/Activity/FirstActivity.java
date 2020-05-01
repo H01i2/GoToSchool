@@ -10,10 +10,13 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.project1.R;
+import com.example.project1.db.dbInsert;
+
+import org.litepal.LitePal;
 
 
 
-    /*第一屏*/
+/*第一屏*/
 
 
 
@@ -37,6 +40,11 @@ public class FirstActivity extends AppCompatActivity {
                     sleep(6000);//使程序休眠五秒
                     Intent it=new Intent(getApplicationContext(), MainActivity.class);//启动MainActivity
                     startActivity(it);
+                    //数据库创建
+                    LitePal.getDatabase();
+                    //数据插入
+                    dbInsert db = new dbInsert();
+                    db.insert();
                     finish();//关闭当前活动
                 }catch (Exception e){
                     e.printStackTrace();

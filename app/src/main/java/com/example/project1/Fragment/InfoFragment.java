@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.project1.Activity.GameActivity;
 import com.example.project1.R;
 import com.example.project1.Role.Role;
 
@@ -31,11 +32,11 @@ public class InfoFragment extends Fragment {
     private ProgressBar pb_EQ;
     private ProgressBar pb_Mood;
 
-    private TextView tv_Value_Energy;
-    private TextView tv_Value_Health;
-    private TextView tv_Value_IQ;
-    private TextView tv_Value_EQ;
-    private TextView tv_Value_Mood;
+    public TextView tv_Value_Energy;
+    public TextView tv_Value_Health;
+    public TextView tv_Value_IQ;
+    public TextView tv_Value_EQ;
+    public TextView tv_Value_Mood;
 
     ClipDrawable high=new ClipDrawable(new ColorDrawable(Color.rgb(107,149,90)), Gravity.LEFT, ClipDrawable.HORIZONTAL);
     ClipDrawable medium_high=new ClipDrawable(new ColorDrawable(Color.rgb(20,150,219)),Gravity.LEFT,ClipDrawable.HORIZONTAL);
@@ -62,6 +63,7 @@ public class InfoFragment extends Fragment {
         pb_EQ = v.findViewById(R.id.pb_eQ);
         pb_Mood = v.findViewById(R.id.pb_mood);
 
+
         tv_Value_Energy.setText(Integer.toString(role.getHP()));
         tv_Value_Health.setText(Integer.toString(role.getHealth()));
         tv_Value_EQ.setText(Integer.toString(role.getEQ()));
@@ -69,55 +71,56 @@ public class InfoFragment extends Fragment {
         tv_Value_Mood.setText(Integer.toString(role.getMood()));
 
 
-//        if (role.getHP()>=80){
-//            pb_Energy.setProgressDrawable(high);
-//        }else if (role.getHP()>=60){
-//            pb_Energy.setProgressDrawable(medium_high);
-//        }else if (role.getHP()>=40){
-//            pb_Energy.setProgressDrawable(medium_low);
-//        }else if(role.getHP()<40){
-//            pb_Energy.setProgressDrawable(low);
-//        }
 
-//        if (role.getHealth()>=80){
-//            pb_Health.setProgressDrawable(high);
-//        }else if (role.getHealth()>=60){
-//            pb_Health.setProgressDrawable(medium_high);
-//        }else if (role.getHealth()>=40){
-//            pb_Health.setProgressDrawable(medium_low);
-//        }else if(role.getHealth()<40){
-//            pb_Health.setProgressDrawable(low);
-//        }
-//
-//        if (role.getEQ()>=80){
-//            pb_EQ.setProgressDrawable(high);
-//        }else if (role.getEQ()>=60){
-//            pb_EQ.setProgressDrawable(medium_high);
-//        }else if (role.getEQ()>=40){
-//            pb_EQ.setProgressDrawable(medium_low);
-//        }else if(role.getEQ()<40){
-//            pb_EQ.setProgressDrawable(low);
-//        }
+        if (role.getHP()>=80){
+            pb_Energy.setProgressDrawable(high);
+        }else if (role.getHP()>=60){
+            pb_Energy.setProgressDrawable(medium_high);
+        }else if (role.getHP()>=40){
+            pb_Energy.setProgressDrawable(medium_low);
+        }else if(role.getHP()<40){
+            pb_Energy.setProgressDrawable(low);
+        }
 
-//        if (role.getIQ()>=80){
-//            pb_IQ.setProgressDrawable(high);
-//        }else if (role.getIQ()>=60){
-//            pb_IQ.setProgressDrawable(medium_high);
-//        }else if (role.getIQ()>=40){
-//            pb_IQ.setProgressDrawable(medium_low);
-//        }else if(role.getIQ()<40){
-//            pb_IQ.setProgressDrawable(low);
-//        }
+        if (role.getHealth()>=80){
+            pb_Health.setProgressDrawable(high);
+        }else if (role.getHealth()>=60){
+            pb_Health.setProgressDrawable(medium_high);
+        }else if (role.getHealth()>=40){
+            pb_Health.setProgressDrawable(medium_low);
+        }else if(role.getHealth()<40){
+            pb_Health.setProgressDrawable(low);
+        }
 
-//        if (role.getMood()>=80){
-//            pb_Mood.setProgressDrawable(high);
-//        }else if (role.getMood()>=60){
-//            pb_Mood.setProgressDrawable(medium_high);
-//        }else if (role.getMood()>=40){
-//            pb_Mood.setProgressDrawable(medium_low);
-//        }else if(role.getMood()<40){
-//            pb_Mood.setProgressDrawable(low);
-//        }
+        if (role.getEQ()>=80){
+            pb_EQ.setProgressDrawable(high);
+        }else if (role.getEQ()>=60){
+            pb_EQ.setProgressDrawable(medium_high);
+        }else if (role.getEQ()>=40){
+            pb_EQ.setProgressDrawable(medium_low);
+        }else if(role.getEQ()<40){
+            pb_EQ.setProgressDrawable(low);
+        }
+
+        if (role.getIQ()>=80){
+            pb_IQ.setProgressDrawable(high);
+        }else if (role.getIQ()>=60){
+            pb_IQ.setProgressDrawable(medium_high);
+        }else if (role.getIQ()>=40){
+            pb_IQ.setProgressDrawable(medium_low);
+        }else if(role.getIQ()<40){
+            pb_IQ.setProgressDrawable(low);
+        }
+
+        if (role.getMood()>=80){
+            pb_Mood.setProgressDrawable(high);
+        }else if (role.getMood()>=60){
+            pb_Mood.setProgressDrawable(medium_high);
+        }else if (role.getMood()>=40){
+            pb_Mood.setProgressDrawable(medium_low);
+        }else if(role.getMood()<40){
+            pb_Mood.setProgressDrawable(low);
+        }
 
         pb_Energy.setProgress(role.getHP());
         pb_Health.setProgress(role.getHealth());
@@ -127,6 +130,5 @@ public class InfoFragment extends Fragment {
 
         return v;
     }
-
 
 }

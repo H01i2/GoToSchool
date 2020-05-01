@@ -1,5 +1,6 @@
 package com.example.project1.Fragment;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,14 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.example.project1.Activity.GameActivity;
+import com.example.project1.Activity.MainActivity;
 import com.example.project1.R;
+import com.example.project1.Role.Role;
+import com.example.project1.db.getDB;
+import com.example.project1.display;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 
@@ -48,12 +55,21 @@ public class StudyFragment extends Fragment {
         lv_Study.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final GameActivity ga = new GameActivity();
+                final getDB DB = new getDB();
+                display d = new display(getActivity());
                 if(id==0){          //点击努力学习时
-                    Toast.makeText(getActivity(), "黎海亮加油", Toast.LENGTH_LONG).show();
+                    DB.setName("认真学习");
+                    DB.getDB();
+                    d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }else if(id==1) {
-                    Toast.makeText(getActivity(), "廖宇轩加油", Toast.LENGTH_LONG).show();
+                    DB.setName("课后复习");
+                    DB.getDB();
+                    d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }else if(id==2) {
-                    Toast.makeText(getActivity(), "你是煞笔", Toast.LENGTH_LONG).show();
+                    DB.setName("图书馆");
+                    DB.getDB();
+                    d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }else if(id==3) {   //点击食堂时进入CanteenFragment
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new CanteenFragment()).commit();
@@ -65,4 +81,71 @@ public class StudyFragment extends Fragment {
         return view;
 
     }
+
+//    public void dialog(final getDB DB, int EventsNum) {
+//        final GameActivity ga = new GameActivity();
+//        if (EventsNum==1){
+//            AlertDialog.Builder Events = new AlertDialog.Builder(getActivity());
+//            Events.setTitle("事件")
+//                    .setMessage(DB.getEvent())
+//                    .setNegativeButton(DB.getOptionT().get(0), new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            DB.setNUM(ga.getRole(),1);
+//                            displayText();
+//                        }
+//                    });
+//            Events.show();
+//        }else if(EventsNum==2){
+//            AlertDialog.Builder Events = new AlertDialog.Builder(getActivity());
+//            Events.setTitle("事件");
+//            Events.setMessage(DB.getEvent());
+//            Events.setPositiveButton(DB.getOptionT().get(0), new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    DB.setNUM(ga.getRole(),1);
+//                    displayText();
+//                }
+//            });
+//            Events.setNegativeButton(DB.getOptionT().get(1), new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    DB.setNUM(ga.getRole(),2);
+//                    displayText();
+//                }
+//            });
+//            Events.show();
+//        }else if (EventsNum==3){
+//            AlertDialog.Builder Events = new AlertDialog.Builder(getActivity());
+//            Events.setTitle("事件");
+//            Events.setMessage(DB.getEvent());
+//            Events.setPositiveButton(DB.getOptionT().get(0), new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    DB.setNUM(ga.getRole(),1);
+//                    displayText();
+//                }
+//            });
+//            Events.setNegativeButton(DB.getOptionT().get(1), new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    DB.setNUM(ga.getRole(),2);
+//                    displayText();
+//                }
+//            });
+//            Events.setNeutralButton(DB.getOptionT().get(2), new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    DB.setNUM(ga.getRole(),3);
+//                    displayText();
+//                }
+//            });
+//            Events.show();
+//        }
+//
+//    }
+//
+//    private void displayText() {
+//    }
+
 }

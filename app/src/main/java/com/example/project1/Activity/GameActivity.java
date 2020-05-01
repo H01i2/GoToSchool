@@ -28,7 +28,6 @@ import com.example.project1.Fragment.StudyFragment;
 import com.example.project1.Role.Role;
 import com.example.project1.SharedHelper;
 
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -45,7 +44,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
 
     private TextView tv_name;
     private TextView tv_age;
-    private TextView tv_money;
+    public static TextView tv_money;
     private TextView tv_time;
     private TextView tv_Value_Energy;
     private TextView tv_Value_Health;
@@ -63,9 +62,15 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
     private FragmentManager manager;
     private FragmentTransaction transaction;
 
-    private Role role=null;
+    private static Role role=null;
 
+    public static Role getRole() {
+        return role;
+    }
 
+    public static void setRole(Role role) {
+        GameActivity.role = role;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -235,6 +240,9 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
         }
     }
+
+
+
 
     public void next_month(){
         role.setMonth(role.getMonth()+1);

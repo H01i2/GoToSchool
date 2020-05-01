@@ -15,7 +15,6 @@ public class Role {
     private int nj;       //年级下标
 
 
-
     public Role() {
     }
 

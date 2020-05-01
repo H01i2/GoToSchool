@@ -1,13 +1,16 @@
 package com.example.project1.Fragment;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
+import com.example.project1.Activity.MainActivity;
 import com.example.project1.R;
 import com.example.project1.Role.Role;
 import com.example.project1.SharedHelper;
@@ -22,6 +25,8 @@ import androidx.fragment.app.Fragment;
 
 
 public class MenuFragment extends Fragment implements View.OnClickListener {
+    private Context mContext;
+
     private Button btn_Menuquit;
     private Button btn_Aboutus;
     private Button btn_Save;
@@ -38,6 +43,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
      */
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
          View view=inflater.inflate(R.layout.menu_fragment,container,false);
+
+        this.mContext = getActivity();
+
 
          btn_Menuquit = (Button) view.findViewById(R.id.btn_menuquit);
          btn_Aboutus = (Button) view.findViewById(R.id.btn_aboutus);
@@ -85,6 +93,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             case R.id.btn_save:
                 SharedHelper s=new SharedHelper(getActivity().getApplicationContext());
                 s.save(role);
+                Toast.makeText(mContext, "保存成功", Toast.LENGTH_SHORT).show();
                 break;
         }
 
