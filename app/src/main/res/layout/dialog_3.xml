@@ -12,7 +12,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:text="Title"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:textColor="#000040"/>
     <TextView
         android:id="@+id/tv_dialog3_content"
         android:layout_width="match_parent"
@@ -21,7 +22,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:text="你是煞笔"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:textColor="#000040"/>
     <Button
         android:id="@+id/btn_dialog3_1"
         android:layout_width="match_parent"

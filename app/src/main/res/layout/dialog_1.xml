@@ -12,7 +12,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:textColor="#000040"/>
     <TextView
         android:id="@+id/tv_dialog1_content"
         android:layout_width="match_parent"
@@ -20,7 +21,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:textColor="#000040"/>
     <Button
         android:id="@+id/btn_dialog1_1"
         android:layout_width="match_parent"
