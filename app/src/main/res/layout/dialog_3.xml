@@ -23,7 +23,8 @@
         android:layout_marginTop="10dp"
         android:text="你是煞笔"
         android:textSize="15dp"
-        android:textColor="#000040"/>
+        android:textColor="#000040"
+        android:maxLines="5"/>
     <Button
         android:id="@+id/btn_dialog3_1"
         android:layout_width="match_parent"

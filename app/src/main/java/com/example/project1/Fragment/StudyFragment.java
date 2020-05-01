@@ -73,6 +73,10 @@ public class StudyFragment extends Fragment {
                 }else if(id==3) {   //点击食堂时进入CanteenFragment
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new CanteenFragment()).commit();
+                }else if (id==4){
+                    DB.setName("操场");
+                    DB.getDB();
+                    d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }
             }
         });

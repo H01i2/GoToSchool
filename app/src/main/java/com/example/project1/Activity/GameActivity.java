@@ -141,7 +141,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         if(key!=null) {
             switch (key) {
                 case "start":   //新的游戏
-                    role = new Role("随便", 6, 1000, 100, 100, (int) (Math.random() *(30-1)+1),
+                    role = new Role("随便", 6, 0, 100, 100, (int) (Math.random() *(30-1)+1),
                             (int) (Math.random()*(30-1)+1), 50, 9, "小学",0);
                     break;
                 case "continue":    //继续游戏
