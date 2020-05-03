@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -24,7 +25,11 @@ public class display extends View {
         if (EventsNum==1){
             final AlertDialog Events = new AlertDialog.Builder(this.getContext()).create();
             Events.show();
+            WindowManager.LayoutParams params = Events.getWindow().getAttributes();
+            params.width = 700;
+            Events.getWindow().setAttributes(params);
             Window window = Events.getWindow();
+            window.setBackgroundDrawableResource(R.drawable.alertdialog_style);
             window.setContentView(R.layout.dialog_1);
             TextView dialogTitle = (TextView) window.findViewById(R.id.tv_dialog1_title);
             dialogTitle.setText("事件");
@@ -43,7 +48,11 @@ public class display extends View {
         }else if(EventsNum==2){
             final AlertDialog Events = new AlertDialog.Builder(this.getContext()).create();
             Events.show();
+            WindowManager.LayoutParams params = Events.getWindow().getAttributes();
+            params.width = 700;
+            Events.getWindow().setAttributes(params);
             Window window = Events.getWindow();
+            window.setBackgroundDrawableResource(R.drawable.alertdialog_style);
             window.setContentView(R.layout.dialog_2);
             TextView dialogTitle = (TextView) window.findViewById(R.id.tv_dialog2_title);
             dialogTitle.setText("事件");
@@ -72,8 +81,12 @@ public class display extends View {
         }else if (EventsNum==3){
             final AlertDialog Events = new AlertDialog.Builder(this.getContext()).create();
             Events.show();
+            WindowManager.LayoutParams params = Events.getWindow().getAttributes();
+            params.width = 700;
+            Events.getWindow().setAttributes(params);
             Window window = Events.getWindow();
             window.setContentView(R.layout.dialog_3);
+            window.setBackgroundDrawableResource(R.drawable.alertdialog_style);
             TextView dialogTitle = (TextView) window.findViewById(R.id.tv_dialog3_title);
             dialogTitle.setText("事件");
             TextView dialogContent = (TextView) window.findViewById(R.id.tv_dialog3_content);
