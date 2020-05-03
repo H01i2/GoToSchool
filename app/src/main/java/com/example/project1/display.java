@@ -42,6 +42,8 @@ public class display extends View {
                     @Override
                     public void onClick(View v) {
                         DB.setNUM(role,1);
+                        SharedHelper s=new SharedHelper(getContext());           //实时保存
+                        s.save(role);
                         Events.dismiss();
                     }
                 });
@@ -65,6 +67,8 @@ public class display extends View {
                 @Override
                 public void onClick(View v) {
                     DB.setNUM(role,1);
+                    SharedHelper s=new SharedHelper(getContext());           //实时保存
+                    s.save(role);
                     Events.dismiss();
                 }
             });
@@ -75,6 +79,8 @@ public class display extends View {
                 @Override
                 public void onClick(View v) {
                     DB.setNUM(role,2);
+                    SharedHelper s=new SharedHelper(getContext());           //实时保存
+                    s.save(role);
                     Events.dismiss();
                 }
             });
@@ -98,6 +104,8 @@ public class display extends View {
                 @Override
                 public void onClick(View v) {
                     DB.setNUM(role,1);
+                    SharedHelper s=new SharedHelper(getContext());           //实时保存
+                    s.save(role);
                     Events.dismiss();
                 }
             });
@@ -108,6 +116,8 @@ public class display extends View {
                 @Override
                 public void onClick(View v) {
                     DB.setNUM(role,2);
+                    SharedHelper s=new SharedHelper(getContext());           //实时保存
+                    s.save(role);
                     Events.dismiss();
                 }
             });
@@ -118,6 +128,8 @@ public class display extends View {
                 @Override
                 public void onClick(View v) {
                     DB.setNUM(role,3);
+                    SharedHelper s=new SharedHelper(getContext());           //实时保存
+                    s.save(role);
                     Events.dismiss();
                 }
             });
