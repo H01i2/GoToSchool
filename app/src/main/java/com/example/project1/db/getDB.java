@@ -54,7 +54,6 @@ public class getDB {
         events = ev.get(num);                                                              //从列表中查找随机选出的事件存到events
         Event = events.getEvents();                                                        //将事件存到Event
         EventsNum();
-
     }
 
     public String getName(){
