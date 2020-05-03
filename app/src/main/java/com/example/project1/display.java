@@ -1,8 +1,6 @@
 package com.example.project1;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -10,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.project1.Role.Role;
+import com.example.project1.Role.SharedHelper;
 import com.example.project1.db.getDB;
 
 import androidx.appcompat.app.AlertDialog;

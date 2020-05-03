@@ -10,10 +10,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-import com.example.project1.Activity.MainActivity;
 import com.example.project1.R;
 import com.example.project1.Role.Role;
-import com.example.project1.SharedHelper;
+import com.example.project1.Role.SharedHelper;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
