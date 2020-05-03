@@ -15,6 +15,7 @@ public class Role {
     private int nj;       //年级下标
 
 
+
     public Role() {
     }
 
@@ -124,5 +125,47 @@ public class Role {
 
     public void setNj(int nj) {
         this.nj = nj;
+    }
+
+    //设置最大最小值
+    public void MaxMin(){
+        int max = 100;
+        int min = 0;
+
+        if (HP<min){
+            HP = min;
+        }
+        if (HP>max){
+            HP = max;
+        }
+
+        if (health<min){
+            health = min;
+        }
+        if (health>max){
+            health = max;
+        }
+
+        if (EQ<min){
+            EQ = min;
+        }
+        if (EQ>max){
+            EQ = max;
+        }
+
+        if (IQ<min){
+            IQ = min;
+        }
+        if (IQ>max){
+            IQ = max;
+        }
+
+        if (mood<min){
+            mood = min;
+        }
+        if (mood>max){
+            mood = max;
+        }
+
     }
 }

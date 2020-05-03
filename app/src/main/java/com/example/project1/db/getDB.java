@@ -56,6 +56,8 @@ public class getDB {
         EventsNum();
     }
 
+    //姓名随机
+
     public String getName(){
         List<Name> n = LitePal.findAll(Name.class);
         Random random = new Random();
@@ -101,6 +103,7 @@ public class getDB {
             role.setMood(role.getMood() + (OptionI.get(2))[4]);
             role.setMoney(role.getMoney() + (OptionI.get(2))[5]);
         }
+        role.MaxMin();
     }
 
     //分离分离选项名和选项值

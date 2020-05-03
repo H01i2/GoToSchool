@@ -78,7 +78,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
 
             case R.id.btn_aboutus:
                 AlertDialog.Builder aboutus= new AlertDialog.Builder(getActivity()).setTitle("关于我们");
-                aboutus.setMessage("UI设计：徐浩");
+                aboutus.setMessage("程序设计：黎海亮\t廖宇轩\nUI设计：徐浩");
                 aboutus.setIcon(R.drawable.aboutus);
                 aboutus.setPositiveButton("好喔", new DialogInterface.OnClickListener() {
                     @Override
