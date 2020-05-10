@@ -77,6 +77,10 @@ public class StudyFragment extends Fragment {
                     DB.setName("操场");
                     DB.getDB();
                     d.dialog(DB,DB.EventsNum(),ga.getRole());
+                }else if (id==5){
+                    DB.setName("逃课");
+                    DB.getDB();
+                    d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }
             }
         });

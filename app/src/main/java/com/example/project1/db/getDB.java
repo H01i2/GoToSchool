@@ -13,7 +13,7 @@ public class getDB {
     private String OptionText;          //存选项名
     private int[] OptionInt;            //存选项值
     private Events events;              //事件存储
-    private String name ;               //用于事件判断
+    private String action;               //用于事件判断
     private String getOption1;
     private String getOption2;
     private String getOption3;
@@ -30,8 +30,8 @@ public class getDB {
         return OptionText;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String action) {
+        this.action = action;
     }
 
     public List<String> getOptionT() {
@@ -45,7 +45,7 @@ public class getDB {
 
 
     public void getDB() {
-        List<Events> ev = LitePal.where("action=?", name).find(Events.class);  //查找合适的数据存放到列表ev
+        List<Events> ev = LitePal.where("action=?", action).find(Events.class);  //查找合适的数据存放到列表ev
         Random random = new Random();                                                      //随机对象创建
         int num = random.nextInt(ev.size());                                               //num存储随机的数字
         events = ev.get(num);                                                              //从列表中查找随机选出的事件存到events
