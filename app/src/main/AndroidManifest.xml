@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Activity.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +20,7 @@
         </activity>
         <activity android:name=".Fragment.RltvFragment" />
         <activity android:name=".Activity.GameActivity" />
-        <activity android:name=".Activity.MainActivity">
-        </activity>
+        <activity android:name=".Activity.MainActivity"></activity>
     </application>
 
 </manifest>

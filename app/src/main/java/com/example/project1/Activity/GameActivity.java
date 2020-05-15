@@ -27,8 +27,9 @@ import com.example.project1.Fragment.RltvFragment;
 import com.example.project1.Fragment.StudyFragment;
 import com.example.project1.Role.Role;
 import com.example.project1.Role.SharedHelper;
-import com.example.project1.clickSound;
+import com.example.project1.music.clickSound;
 import com.example.project1.db.getDB;
+import com.example.project1.music.music;
 
 import java.util.Map;
 
@@ -134,6 +135,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
                 R.anim.slide_right_in, R.anim.slide_right_out).replace(R.id.fra_content, study);
         transaction.commit();
+        music.play(this, R.raw.bgm);
         initial();
     }
 
@@ -329,6 +331,24 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
         return super.onKeyDown(keyCode, event);
     }
 
+
+
+
+    @Override
+    protected void onPause() {
+        // TODO Auto-generated method stub
+        super.onPause();
+        music.stop(this);
+    }
+
+
+    @Override
+    protected void onResume() {
+        // TODO Auto-generated method stub
+        super.onResume();
+        music.play(this, R.raw.bgm);
+
+    }
 }
 
 

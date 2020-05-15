@@ -7,11 +7,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import com.example.project1.Activity.GameActivity;
 import com.example.project1.R;
-import com.example.project1.clickSound;
+import com.example.project1.music.clickSound;
 import com.example.project1.db.getDB;
 import com.example.project1.display;
 

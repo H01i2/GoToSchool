@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.project1.Activity.GameActivity;
 import com.example.project1.R;
-import com.example.project1.clickSound;
+import com.example.project1.music.clickSound;
 import com.example.project1.db.getDB;
 import com.example.project1.display;
 
