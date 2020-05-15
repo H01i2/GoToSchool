@@ -13,13 +13,16 @@ import android.widget.Toast;
 import com.example.project1.R;
 import com.example.project1.Role.Role;
 import com.example.project1.Role.SharedHelper;
+import com.example.project1.clickSound;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import static org.litepal.LitePalApplication.getContext;
 
 
-    /*右上角菜单下的界面*/
+
+/*右上角菜单下的界面*/
 
 
 
@@ -35,6 +38,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     public MenuFragment(Role role) {
         this.role = role;
     }
+
+    clickSound click = clickSound.getInstance(getContext());
 
     @Override
     /**
@@ -57,6 +62,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btn_menuquit:
+                click.play(4);
                 AlertDialog.Builder quit= new AlertDialog.Builder(getActivity());
                 quit.setMessage("确定不再玩一下吗！");
                 quit.setPositiveButton("我好困", new DialogInterface.OnClickListener() {
@@ -76,6 +82,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btn_aboutus:
+                click.play(4);
                 AlertDialog.Builder aboutus= new AlertDialog.Builder(getActivity()).setTitle("关于我们");
                 aboutus.setMessage("程序设计：黎海亮\t廖宇轩\nUI设计：徐浩");
                 aboutus.setIcon(R.drawable.aboutus);
@@ -90,6 +97,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 aboutus_1.show();
                 break;
             case R.id.btn_save:
+                click.play(4);
                 SharedHelper s=new SharedHelper(getActivity().getApplicationContext());
                 s.save(role);
                 Toast.makeText(mContext, "保存成功", Toast.LENGTH_SHORT).show();

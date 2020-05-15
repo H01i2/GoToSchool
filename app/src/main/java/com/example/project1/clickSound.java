@@ -15,6 +15,7 @@ public class clickSound  {
         soundPool.load(context, R.raw.click_01, 1);
         soundPool.load(context, R.raw.events, 2);
         soundPool.load(context, R.raw.ui, 3);
+        soundPool.load(context, R.raw.menu, 4);
     }
 
     public static clickSound getInstance(Context context) {
