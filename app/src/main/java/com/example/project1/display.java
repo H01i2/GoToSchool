@@ -20,6 +20,8 @@ public class display extends View {
         super(context);
     }
 
+    clickSound click = clickSound.getInstance(getContext());
+
     public void dialog(final getDB DB, int EventsNum, final Role role) {
         if (EventsNum==1){
             final AlertDialog Events = new AlertDialog.Builder(this.getContext()).create();
@@ -40,6 +42,7 @@ public class display extends View {
 
                     @Override
                     public void onClick(View v) {
+                        click.play(2);
                         DB.setNUM(role,1);
                         SharedHelper s=new SharedHelper(getContext());           //实时保存
                         s.save(role);
@@ -65,6 +68,7 @@ public class display extends View {
 
                 @Override
                 public void onClick(View v) {
+                    click.play(2);
                     DB.setNUM(role,1);
                     SharedHelper s=new SharedHelper(getContext());           //实时保存
                     s.save(role);
@@ -77,6 +81,7 @@ public class display extends View {
 
                 @Override
                 public void onClick(View v) {
+                    click.play(2);
                     DB.setNUM(role,2);
                     SharedHelper s=new SharedHelper(getContext());           //实时保存
                     s.save(role);
@@ -102,6 +107,7 @@ public class display extends View {
 
                 @Override
                 public void onClick(View v) {
+                    click.play(2);
                     DB.setNUM(role,1);
                     SharedHelper s=new SharedHelper(getContext());           //实时保存
                     s.save(role);
@@ -114,6 +120,7 @@ public class display extends View {
 
                 @Override
                 public void onClick(View v) {
+                    click.play(2);
                     DB.setNUM(role,2);
                     SharedHelper s=new SharedHelper(getContext());           //实时保存
                     s.save(role);
@@ -126,6 +133,7 @@ public class display extends View {
 
                 @Override
                 public void onClick(View v) {
+                    click.play(2);
                     DB.setNUM(role,3);
                     SharedHelper s=new SharedHelper(getContext());           //实时保存
                     s.save(role);

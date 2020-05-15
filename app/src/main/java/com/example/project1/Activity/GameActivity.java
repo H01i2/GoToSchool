@@ -202,7 +202,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
 
         switch (v.getId()) {
             case R.id.btn_study:
-                click.play(1);    //按键音
+                click.play(3);    //按键音
                 hideFragment(transaction);
                 study = new StudyFragment();
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -211,7 +211,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
 
             case R.id.btn_life:
-                click.play(1);    //按键音
+                click.play(3);    //按键音
                 hideFragment(transaction);
                 life = new LifeFragment();
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -220,7 +220,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
 
             case R.id.btn_rltv:
-                click.play(1);    //按键音
+                click.play(3);    //按键音
                 hideFragment(transaction);
                 rltv = new RltvFragment();
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -229,7 +229,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
 
             case R.id.iv_head:
-                click.play(1);    //按键音
+                click.play(3);    //按键音
                 hideFragment(transaction);
                 info = new InfoFragment(role);
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -238,7 +238,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
 
             case R.id.btn_menu:
-                click.play(1);    //按键音
+                click.play(3);    //按键音
                 hideFragment(transaction);
                 menu = new MenuFragment(role);
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -246,7 +246,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 transaction.commit();
                 break;
             case R.id.btn_next:
-                click.play(1);    //按键音
+                click.play(3);    //按键音
                 next_month();
                 break;
             default:

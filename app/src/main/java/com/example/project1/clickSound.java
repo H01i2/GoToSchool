@@ -10,10 +10,11 @@ public class clickSound  {
 
     @SuppressLint("NewApi")
     public clickSound(Context context) {
-//        soundPool = new SoundPool(3, AudioManager.STREAM_SYSTEM, 0);
         soundPool = new SoundPool.Builder().build();
         //加载音频文件
         soundPool.load(context, R.raw.click_01, 1);
+        soundPool.load(context, R.raw.events, 2);
+        soundPool.load(context, R.raw.ui, 3);
     }
 
     public static clickSound getInstance(Context context) {
