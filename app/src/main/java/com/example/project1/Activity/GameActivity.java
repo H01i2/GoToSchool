@@ -27,9 +27,12 @@ import com.example.project1.Fragment.RltvFragment;
 import com.example.project1.Fragment.StudyFragment;
 import com.example.project1.Role.Role;
 import com.example.project1.Role.SharedHelper;
+import com.example.project1.clickSound;
 import com.example.project1.db.getDB;
 
 import java.util.Map;
+
+import static org.litepal.LitePalApplication.getContext;
 
 
 public class GameActivity extends FragmentActivity implements OnClickListener {
@@ -72,6 +75,8 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
     public static void setRole(Role role) {
         GameActivity.role = role;
     }
+
+    clickSound click = clickSound.getInstance(getContext());                //按键音
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,6 +202,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
 
         switch (v.getId()) {
             case R.id.btn_study:
+                click.play(1);    //按键音
                 hideFragment(transaction);
                 study = new StudyFragment();
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -205,6 +211,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
 
             case R.id.btn_life:
+                click.play(1);    //按键音
                 hideFragment(transaction);
                 life = new LifeFragment();
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -213,6 +220,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
 
             case R.id.btn_rltv:
+                click.play(1);    //按键音
                 hideFragment(transaction);
                 rltv = new RltvFragment();
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -221,6 +229,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
 
             case R.id.iv_head:
+                click.play(1);    //按键音
                 hideFragment(transaction);
                 info = new InfoFragment(role);
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -229,6 +238,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 break;
 
             case R.id.btn_menu:
+                click.play(1);    //按键音
                 hideFragment(transaction);
                 menu = new MenuFragment(role);
                 transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
@@ -236,6 +246,7 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
                 transaction.commit();
                 break;
             case R.id.btn_next:
+                click.play(1);    //按键音
                 next_month();
                 break;
             default:

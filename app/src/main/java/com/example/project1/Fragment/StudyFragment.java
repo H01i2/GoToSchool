@@ -14,6 +14,7 @@ import com.example.project1.Activity.GameActivity;
 import com.example.project1.Activity.MainActivity;
 import com.example.project1.R;
 import com.example.project1.Role.Role;
+import com.example.project1.clickSound;
 import com.example.project1.db.getDB;
 import com.example.project1.display;
 
@@ -25,9 +26,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.litepal.LitePalApplication.getContext;
 
 
-    /*学习界面*/
+
+/*学习界面*/
 
 
 
@@ -37,6 +40,8 @@ public class StudyFragment extends Fragment {
                 R.drawable.canteen,R.drawable.playground,R.drawable.skip_class};
     private ArrayList<Map<String, Object>> data_Study = new ArrayList<Map<String, Object>>();
     private ListView lv_Study;
+
+    clickSound click = clickSound.getInstance(getContext());
     @Override
     /**
      * 加载布局文件然后直接返回，显示在Activity
@@ -59,25 +64,31 @@ public class StudyFragment extends Fragment {
                 final getDB DB = new getDB();
                 display d = new display(getActivity());
                 if(id==0){          //点击努力学习时
+                    click.play(1);
                     DB.setName("认真学习");
                     DB.getDB();
                     d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }else if(id==1) {
+                    click.play(1);
                     DB.setName("课后复习");
                     DB.getDB();
                     d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }else if(id==2) {
+                    click.play(1);
                     DB.setName("图书馆");
                     DB.getDB();
                     d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }else if(id==3) {   //点击食堂时进入CanteenFragment
+                    click.play(1);
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,R.anim.slide_right_out,
                             R.anim.slide_right_in,R.anim.slide_right_out).replace(R.id.fra_content,new CanteenFragment()).commit();
                 }else if (id==4){
+                    click.play(1);
                     DB.setName("操场");
                     DB.getDB();
                     d.dialog(DB,DB.EventsNum(),ga.getRole());
                 }else if (id==5){
+                    click.play(1);
                     DB.setName("逃课");
                     DB.getDB();
                     d.dialog(DB,DB.EventsNum(),ga.getRole());

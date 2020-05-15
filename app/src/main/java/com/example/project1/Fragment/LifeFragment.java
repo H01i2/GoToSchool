@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.project1.Activity.GameActivity;
 import com.example.project1.R;
+import com.example.project1.clickSound;
 import com.example.project1.db.getDB;
 import com.example.project1.display;
 
@@ -31,6 +32,7 @@ public class LifeFragment extends Fragment {
             R.drawable.hospital, R.drawable.exercise, R.drawable.club, R.drawable.net_bar};
     private ArrayList<Map<String, Object>> data_Life = new ArrayList<Map<String, Object>>();
     private ListView lv_Life;
+    clickSound click = clickSound.getInstance(getContext());
 
     @Override
     /*加载布局文件然后直接返回，显示在Activity*/
@@ -52,26 +54,33 @@ public class LifeFragment extends Fragment {
                 final getDB DB = new getDB();
                 display d = new display(getActivity());
                 if (id == 0) {         //点击回家时进入HomeFragment
+                    click.play(1);
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
                             R.anim.slide_right_in, R.anim.slide_right_out).replace(R.id.fra_content, new HomeFragment()).commit();
                 } else if (id == 1) {  //点击兼职时
+                    click.play(1);
                     DB.setName("兼职");
                     DB.getDB();
                     d.dialog(DB, DB.EventsNum(), ga.getRole());
                 } else if (id == 2) {  //点击超市时
+                    click.play(1);
                     getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out,
                             R.anim.slide_right_in, R.anim.slide_right_out).replace(R.id.fra_content, new MarketFragment()).commit();
                 } else if (id == 3) {  //医院
+                    click.play(1);
                     Toast.makeText(getActivity(),"还没做好，等待更新",Toast.LENGTH_SHORT).show();
                 } else if (id == 4) {  //锻炼
+                    click.play(1);
                     DB.setName("锻炼");
                     DB.getDB();
                     d.dialog(DB, DB.EventsNum(), ga.getRole());
                 } else if (id == 5) {  //酒吧
+                    click.play(1);
                     DB.setName("酒吧");
                     DB.getDB();
                     d.dialog(DB, DB.EventsNum(), ga.getRole());
                 } else if (id == 6) {  //网吧
+                    click.play(1);
                     DB.setName("网吧");
                     DB.getDB();
                     d.dialog(DB, DB.EventsNum(), ga.getRole());

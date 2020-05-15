@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.project1.Activity.GameActivity;
 import com.example.project1.R;
+import com.example.project1.clickSound;
 import com.example.project1.db.getDB;
 import com.example.project1.display;
 
@@ -30,6 +31,8 @@ public class HomeFragment extends Fragment {
             R.drawable.back};
     private ArrayList<Map<String, Object>> data_Home = new ArrayList<Map<String, Object>>();
     private ListView lv_Home;
+
+    clickSound click = clickSound.getInstance(getContext());
 
     @Override
     /*加载布局文件然后直接返回，显示在Activity*/
@@ -51,18 +54,22 @@ public class HomeFragment extends Fragment {
                 final getDB DB = new getDB();
                 display d = new display(getActivity());
                 if (id == 0) {          //点击吃饭时
+                    click.play(1);
                     DB.setName("回家吃饭");
                     DB.getDB();
                     d.dialog(DB, DB.EventsNum(), ga.getRole());
                 } else if (id == 1) {   //点击睡觉时
+                    click.play(1);
                     DB.setName("回家睡觉");
                     DB.getDB();
                     d.dialog(DB, DB.EventsNum(), ga.getRole());
                 } else if (id == 2) {   //点击看电视时
+                    click.play(1);
                     DB.setName("看电视");
                     DB.getDB();
                     d.dialog(DB, DB.EventsNum(), ga.getRole());
                 } else if (id == 3) {   //点击看电视时
+                    click.play(1);
                     DB.setName("聊天");
                     DB.getDB();
                     d.dialog(DB, DB.EventsNum(), ga.getRole());
