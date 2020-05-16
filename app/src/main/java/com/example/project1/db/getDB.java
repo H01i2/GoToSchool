@@ -43,9 +43,18 @@ public class getDB {
     }
 
 
-
+    //按键事件随机
     public void getDB() {
         List<Events> ev = LitePal.where("action=?", action).find(Events.class);  //查找合适的数据存放到列表ev
+        Random random = new Random();                                                      //随机对象创建
+        int num = random.nextInt(ev.size());                                               //num存储随机的数字
+        events = ev.get(num);                                                              //从列表中查找随机选出的事件存到events
+        Event = events.getEvents();                                                        //将事件存到Event
+        EventsNum();
+    }
+
+    public void getDBMonth() {
+        List<Events> ev = LitePal.findAll(Events.class);                                   //查找合适的数据存放到列表ev
         Random random = new Random();                                                      //随机对象创建
         int num = random.nextInt(ev.size());                                               //num存储随机的数字
         events = ev.get(num);                                                              //从列表中查找随机选出的事件存到events

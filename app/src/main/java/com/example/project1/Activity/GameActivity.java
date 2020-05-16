@@ -27,6 +27,7 @@ import com.example.project1.Fragment.RltvFragment;
 import com.example.project1.Fragment.StudyFragment;
 import com.example.project1.Role.Role;
 import com.example.project1.Role.SharedHelper;
+import com.example.project1.display;
 import com.example.project1.music.clickSound;
 import com.example.project1.db.getDB;
 import com.example.project1.music.music;
@@ -250,6 +251,10 @@ public class GameActivity extends FragmentActivity implements OnClickListener {
             case R.id.btn_next:
                 click.play(3);    //按键音
                 next_month();
+                getDB db = new getDB();
+                display d = new display(this);
+                db.getDBMonth();
+                d.dialog(db,db.EventsNum(),getRole());
                 break;
             default:
                 break;
